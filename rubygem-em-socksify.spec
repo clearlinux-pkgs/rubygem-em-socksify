@@ -4,7 +4,7 @@
 #
 Name     : rubygem-em-socksify
 Version  : 0.3.0
-Release  : 1
+Release  : 2
 URL      : https://rubygems.org/downloads/em-socksify-0.3.0.gem
 Source0  : https://rubygems.org/downloads/em-socksify-0.3.0.gem
 Summary  : No detailed summary available
