@@ -4,7 +4,7 @@
 #
 Name     : rubygem-em-socksify
 Version  : 0.3.1
-Release  : 3
+Release  : 4
 URL      : https://rubygems.org/downloads/em-socksify-0.3.1.gem
 Source0  : https://rubygems.org/downloads/em-socksify-0.3.1.gem
 Summary  : No detailed summary available
@@ -12,16 +12,11 @@ Group    : Development/Tools
 License  : BSD-2-Clause MIT
 BuildRequires : ruby
 BuildRequires : rubygem-bundler
-BuildRequires : rubygem-devise
-BuildRequires : rubygem-diff-lcs
 BuildRequires : rubygem-eventmachine
 BuildRequires : rubygem-rake
 BuildRequires : rubygem-rdoc
 BuildRequires : rubygem-rspec
 BuildRequires : rubygem-rspec-core
-BuildRequires : rubygem-rspec-expectations
-BuildRequires : rubygem-rspec-mocks
-BuildRequires : rubygem-rspec-support
 
 %description
 # Transparent proxy support for any EventMachine protocol
@@ -54,60 +49,23 @@ cp -pa .%{_bindir}/* \
 %{buildroot}%{_bindir}/
 fi
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
-pushd %{buildroot}%{gem_dir}/gems/em-socksify-0.3.1
-rspec -I.:lib spec/ || :
-popd
-
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/ruby/gems/2.2.0/cache/em-socksify-0.3.1.gem
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/Base64/cdesc-Base64.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/Base64/strict_encode64-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/CONNECT/cdesc-CONNECT.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/CONNECT/connect_parse_response-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/CONNECT/connect_send_handshake-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/CONNECTError/cdesc-CONNECTError.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/cdesc-Connectify.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/connect_hook-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/connect_receive_data-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/connect_unhook-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Connectify/connectify-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKS5/cdesc-SOCKS5.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKS5/socks_methods-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKS5/socks_parse_response-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKS5/socks_send_authentication-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKS5/socks_send_connect_request-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKS5/socks_send_handshake-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKSError/cdesc-SOCKSError.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKSError/define-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKSError/for_response_code-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/SOCKSError/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/cdesc-Socksify.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/socks_hook-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/socks_receive_data-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/socks_unhook-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/Socksify/socksify-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/EventMachine/cdesc-EventMachine.ri
-/usr/lib64/ruby/gems/2.2.0/doc/em-socksify-0.3.1/ri/cache.ri
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/.gitignore
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/Gemfile
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/Gemfile.lock
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/MIT-LICENSE
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/README.md
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/Rakefile
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/em-socksify.gemspec
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/lib/em-socksify.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/lib/em-socksify/connect.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/lib/em-socksify/connectify.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/lib/em-socksify/errors.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/lib/em-socksify/socks5.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/lib/em-socksify/socksify.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/lib/em-socksify/version.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/spec/helper.rb
-/usr/lib64/ruby/gems/2.2.0/gems/em-socksify-0.3.1/spec/socksify_spec.rb
-/usr/lib64/ruby/gems/2.2.0/specifications/em-socksify-0.3.1.gemspec
+/usr/lib64/ruby/gems/2.3.0/cache/em-socksify-0.3.1.gem
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/.gitignore
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/Gemfile
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/MIT-LICENSE
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/README.md
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/Rakefile
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/em-socksify.gemspec
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/lib/em-socksify.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/lib/em-socksify/connect.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/lib/em-socksify/connectify.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/lib/em-socksify/errors.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/lib/em-socksify/socks5.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/lib/em-socksify/socksify.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/lib/em-socksify/version.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/spec/helper.rb
+/usr/lib64/ruby/gems/2.3.0/gems/em-socksify-0.3.1/spec/socksify_spec.rb
+/usr/lib64/ruby/gems/2.3.0/specifications/em-socksify-0.3.1.gemspec
