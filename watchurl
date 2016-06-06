@@ -1,4 +1,4 @@
 # File auto-generated with 'Watchfile generator'
-# 2016-03-11 21:44:42.933985
+# 2016-05-06 18:22:16.302411
 # {'>=0.3'}
 watchurl=https://rubygems.org/gems/em-socksify/versions/([0-9]+(?:\.[0-9]+)*)
